@@ -1,0 +1,15 @@
+{% extends "base_usuario.html" %}
+{% block body %}
+<form class="form-signin" action="{% url 'registrar' %}" method="post">
+    {% csrf_token %}
+
+    {% if form.errors %}
+        <div class="alert alert-danger">
+            <button type="button" class="close"
+                    data - dismiss="alert" aria - hidden="true">×
+            </button>
+            {{ form.non_field_errors }}
+        </div>
+    {% endif %}
+</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class = "col-lg-12">
+		<h2 style="margin-top: 0px">{{ perfil.nome }}</h2>
+		<address>			
+			<a href = "mailto:{{ perfil.email }}">{{ perfil.email }}</a>
+			<br>
+			<strong>{{ perfil.nome_empresa }}</strong>
+		
+		</address>
+		{% if perfil_logado != perfil %}
+		<a href = "{% url 'convidar' perfil.id %}">
+			Convidar
+		</a>
+		{% endif %}
+</div>		
+{% endblock %}		
